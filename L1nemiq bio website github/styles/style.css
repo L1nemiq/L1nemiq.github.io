@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1d1f21, #282c34);
+    color: #f8f8f2;
+    font-family: Inter, system-ui, sans-serif;
+}
+
+/* Карточка профиля */
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 380px);
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    gap: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(169, 245, 255, 0.4);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.26);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Картинка профиля */
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(248, 248, 242, 0.16);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.avatar:hover {
+    transform: rotate(-2deg) scale(1.05);
+    border-color: rgba(169, 245, 255, 0.7);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Заголовок профиля */
+.profile-card p:nth-of-type(1) {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* Описание профиля */
+.profile-card p:nth-of-type(2) {
+    font-size: 1rem;
+    color: #c4c4c4;
+}
+
+/* Ссылка профиля */
+.profile-card a {
+    color: #a9f5ff;
+    text-decoration: none;
+}
+
+/* Ссылка профиля когда наведена курсором */
+.profile-card a:hover {
+    text-decoration: underline;
+}
