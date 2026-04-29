@@ -18,6 +18,13 @@ body {
     font-family: Inter, system-ui, sans-serif;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
 /* Карточка профиля */
 
 .profile-card {
@@ -85,4 +92,59 @@ body {
 /* Ссылка профиля когда наведена курсором */
 .profile-card a:hover {
     text-decoration: underline;
+}
+
+/* Иконки социальных сетей */
+
+.icons-ico {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+    transition: transform 0.25s ease;
+}
+
+.icons-ico:hover {
+    transform: scale(1.1);
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Секция "Обо мне" */
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 900px);
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    text-align: left;
+    gap: 14px;
+    margin-top: 5px;
+    max-width: 600px;
+}  
+.about-me h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+.about-me p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #c4c4c4;
+}
+
+/* Футер */
+
+.footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #c4c4c4;
+    text-align: center;
 }
