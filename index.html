@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1nemiq - Profile</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <!--- Личный профиль L1nemiq, отображение информации --->
+
+    <div class="profile-card">
+        <img src="https://avatars.githubusercontent.com/u/211495928?v=4" alt="L1nemiq's Avatar" class="avatar">
+        <p>L1nemiq</p>
+        <p>Begginer Developer</p>
+        <p>⚡ My GitHub: <a href="https://github.com/L1nemiq" target="_blank">@L1nemiq</a></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const card = document.querySelector('.profile-card');
+            const avatar = document.querySelector('.avatar');
+            if (!card || !avatar) return;
+
+            let resetTimer = null;
+
+            const animate = () => {
+                if (resetTimer) {
+                    clearTimeout(resetTimer);
+                }
+
+                card.classList.add('animation-active');
+                avatar.classList.add('animation-active');
+
+                resetTimer = setTimeout(() => {
+                    card.classList.remove('animation-active');
+                    avatar.classList.remove('animation-active');
+                    resetTimer = null;
+                }, 1200);
+            };
+
+            animate();
+            setInterval(animate, 4200);
+        });
+    </script>
+
+</body>
+</html>
