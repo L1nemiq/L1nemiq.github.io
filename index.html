@@ -1,62 +1,92 @@
+<!-- 
+
+    RU
+ 
+        L1nemiq - Мини био сайт
+    
+            Спасибо за посещение моего мини-проекта.
+            Я только учусь в сфере фронтенд-разработки, этот сайт является моим способом практиковаться и делиться своими достижениями.
+            На сайте вы найдете информацию обо мне, мои социальные сети и немного анимаций для развлечения. Этот проект будет только началом моего пути в мире веб-разработки.
+
+    EN
+
+        L1nemiq - Mini Bio Website
+        
+            Thank you for visiting my mini project.
+            I'm just learning in the field of frontend development, this site is my way to practice and share my achievements.
+            On the site you will find information about me, my social networks and some animations for fun. This project will only be the beginning of my journey in the world of web development.
+
+-->
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L1nemiq - Profile</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
-    <!--- Личный профиль L1nemiq, отображение информации --->
-<div class="container">
-    <div class="profile-card">
-        <img src="https://avatars.githubusercontent.com/u/211495928?v=4" alt="L1nemiq's Avatar" class="avatar">
-        <p>L1nemiq</p>
-        <p>Beginner Developer</p>
-        <p>⚡ My GitHub: <a href="https://github.com/L1nemiq" target="_blank">@L1nemiq</a></p>
-    <div class="social-icons">
-        <a href="https://t.me/L1nemiq" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" class="icons-ico"></a>
-        <a href="https://github.com/L1nemiq" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" class="icons-ico"></a>
-    </div>
-</div>
+    <!-- Фон для анимаций -->
 
-    <div class="about-me">
-        <h2>About Me</h2>
-        <p>Hi, I'm L1nemiq! I'm a budding Frontend Developer driven by a passion for coding. I focus on continuous growth and mastering new technologies, always looking for exciting projects and creative collaborations.</p>
-    </div>
+    <div class="bg-overlay"></div>
 
-    <!-- Футер -->
-<div class="footer">
-    <p>© 2026 L1nemiq. Все права защищены.</p>
-</div>
+    <nav class="side-nav blur-effect">
+        <a href="https://github.com/L1nemiq" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" class="nav-icon" alt="My GitHub">
+        </a>
+        <a href="https://t.me/L1nemiq" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" class="nav-icon" alt="My telegram">
+        </a>
+    </nav>
 
-</div>
+    <main class="main-panel blur-effect">
+        
+        <!-- аниме девушки -->
 
+        <div class="anime-container">
+            <img src="assets/animegirl-positive.png" alt="anime png" class="anime-girl anime-base">
+            <img src="assets/animegirl.png" alt="anime png smile" class="anime-girl anime-hover">
+        </div>
 
+        <!-- контент -->
+
+        <div class="content-wrapper">
+            <div class="widget dark-widget profile-info">
+                <img src="https://avatars.githubusercontent.com/u/211495928?v=4" alt="Avatar" class="avatar">
+                <div class="text-info">
+                    <h2>L1nemiq</h2>
+                    <p class="role">Beginner Developer</p>
+                </div>
+            </div>
+
+            <div class="widget dark-widget about-me">
+                <h3>About Me</h3>
+                <p><br>EN:<br> Hi, I’m L1nemiq! I’m an aspiring frontend developer dedicated to programming. I am focused on continuous growth and always learning something new.</p>
+                <p><br>RU:<br> Привет, я L1nemiq! Я начинающий фронтенд-разработчик, моя цель - программирование. Я сосредоточен на постоянном росте и освоении чему-то новому.</p>
+            </div>
+        </div>
+
+            <!-- футер -->
+        <div class="footer">
+          <p>© 2026 L1nesoft corporation. Все права защищены.</p>
+        </div>
+
+    </main>
 
     <script>
 
+        // анимации для аватара
+    
         document.addEventListener("DOMContentLoaded", function() {
-            const card = document.querySelector('.profile-card');
             const avatar = document.querySelector('.avatar');
-            if (!card || !avatar) return;
-
-            let resetTimer = null;
+            if (!avatar) return;
 
             const animate = () => {
-                if (resetTimer) {
-                    clearTimeout(resetTimer);
-                }
-
-                card.classList.add('animation-active');
                 avatar.classList.add('animation-active');
-
-                resetTimer = setTimeout(() => {
-                    card.classList.remove('animation-active');
+                setTimeout(() => {
                     avatar.classList.remove('animation-active');
-                    resetTimer = null;
                 }, 1200);
             };
 
@@ -64,6 +94,5 @@
             setInterval(animate, 4200);
         });
     </script>
-
 </body>
 </html>
